@@ -7,6 +7,8 @@ class Library
     @location = location
     @booksAvailable = []
     @memberList = []
+    #changing the memeber list to a hash instead
+    @mList = Hash.new
   end
 
   #define private accessor methods
@@ -27,6 +29,7 @@ class Library
 
   def enrollNewMember(member)
     @memberList.push(member)
+    @mList[member.getMemberId] = member.getMemberName
   end
 
   def checkoutBook(aBook, aMember)
@@ -45,6 +48,7 @@ class Library
 
   def printMemberList
     puts @memberList
+    puts @mList
   end
 end
 
@@ -69,8 +73,8 @@ libHumble.addBookToLibrary(book3)
 libHumble.enrollNewMember(memb1)
 libHumble.enrollNewMember(memb2)
 
-#libHumble.printMemberList
-libHumble.printBooksAvailable
+libHumble.printMemberList
+#libHumble.printBooksAvailable
 puts ""
 
 #book1.checkedOutBy(memb2.getMemberId)
@@ -78,14 +82,14 @@ puts ""
 #book2.checkedOutBy(memb1.getMemberId)
 #puts ""
 
-libHumble.printBooksAvailable
-puts ""
+#libHumble.printBooksAvailable
+#puts ""
 
-libHumble.checkoutBook(book1, memb1)
-puts ""
-libHumble.checkoutBook(book2, memb2)
-puts ""
-libHumble.checkoutBook(book3, memb1)
-puts ""
+#libHumble.checkoutBook(book1, memb1)
+#puts ""
+#libHumble.checkoutBook(book2, memb2)
+#puts ""
+#libHumble.checkoutBook(book3, memb1)
+#puts ""
 
-libHumble.printBooksAvailable
+#libHumble.printBooksAvailable
