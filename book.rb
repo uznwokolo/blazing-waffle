@@ -2,8 +2,8 @@
 
 class Book
   # constructor method
-  def initialize(title, author, outBy)
-    @title, @author, @outBy = title, author, 0
+  def initialize(id, title, author, outBy)     #adding book id and associated methods
+    @bookId, @title, @author, @outBy = id, title, author, 0
   end
 
   #define private accessor methods
@@ -13,23 +13,28 @@ class Book
   def getAuthor
     @author
   end
+  def getId
+    @bookId
+  end
   def getIdCheckedOutBy
     @outBy
   end
 
 
   #make them private
-  private :getTitle, :getAuthor
+  private :getTitle, :getAuthor, :getId
 
   #instance method, by default it is public
   def to_s
-    "Book : Title - #{getTitle}"
-    #"Author - #{getAuthor},
-    #Checked out by - #{getIdCheckedOutBy}"
+    "Book : #{getId} - #{getTitle}"
   end
 
   def getBookTitle
     @getTitle
+  end
+
+  def getBookId
+    @getId
   end
 
   def checkedOutBy(member_id) #this can be used to check out a book or return it
@@ -38,7 +43,7 @@ class Book
 
 end
 
-#b1 = Book.new("James Bond", "Peter Fleming", 0)
+#b1 = Book.new("AS3394","James Bond", "Peter Fleming", 0) #added sample id
 
 #puts b1
 

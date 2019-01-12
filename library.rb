@@ -6,7 +6,7 @@ class Library
   def initialize(location)
     @location = location
     @booksAvailable = []
-    @memberList = []
+    #@memberList = []
     #changing the memeber list to a hash instead
     @mList = Hash.new
   end
@@ -25,10 +25,11 @@ class Library
 
   def addBookToLibrary(aBook)
     @booksAvailable.push(aBook)
+    puts "#{aBook} has been added to #{getLocation}" #added to print out when book is added
   end
 
   def enrollNewMember(member)
-    @memberList.push(member)
+    #@memberList.push(member)
     @mList[member.getMemberId] = member.getMemberName
   end
 
@@ -47,7 +48,7 @@ class Library
   end
 
   def printMemberList
-    puts @memberList
+    #puts @memberList
     puts @mList
   end
 end
@@ -55,10 +56,10 @@ end
 # create library
 libHumble = Library.new("Humble")
 
-#create 2 book objects, added another to test additional functions
-book1 = Book.new("oval shape","triangle man",0)
-book2 = Book.new("moby dick","dan smith",0)
-book3 = Book.new("new book","helen keller",0)
+#create 2 book objects, added another to test additional functions /added book id
+book1 = Book.new("NS8006","Passport of Mallam Ilia","Cyprian Ekwensi",0)
+book2 = Book.new("OB3412","Simon Green","Adventures of Hawk and Fisher",0)
+book3 = Book.new("FR2749","Doctor Seuss","Green Eggs and Ham",0)
 
 #create 2 members
 memb1 = Member.new("derek",2001)
