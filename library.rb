@@ -86,11 +86,11 @@ puts ""
 #libHumble.printBooksAvailable
 #puts ""
 
-#libHumble.checkoutBook(book1, memb1)
+libHumble.checkoutBook(book1, memb1)
 #puts ""
-#libHumble.checkoutBook(book2, memb2)
+libHumble.checkoutBook(book2, memb2)
 #puts ""
-#libHumble.checkoutBook(book3, memb1)
+libHumble.checkoutBook(book3, memb1)
 #puts ""
 
-#libHumble.printBooksAvailable
+libHumble.printBooksAvailable
